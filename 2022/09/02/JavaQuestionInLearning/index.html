@@ -17,18 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>归档 | Hexo</title>
-  <meta name="description" content="code">
-<meta property="og:type" content="website">
-<meta property="og:title" content="生命不息，编程不止">
-<meta property="og:url" content="https://water987.github.io/archives/index.html">
+  <title>学习过程中的Java问题解答 | Hexo</title>
+  <meta name="description" content="Q: 如何根据一个list 生成一个新的listList newList &#x3D; new ArrayList(oldList); Q: 运行时异常，非运行时异常A:运行时异常都是RuntimeException类及其子类异常非运行时异常是RuntimeException以外的异常，类型上都属于Exception类及其子类。 Q:为什么123Integer i &#x3D; 50000;Integer k &#x3D; 5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习过程中的Java问题解答">
+<meta property="og:url" content="https://water987.github.io/2022/09/02/JavaQuestionInLearning/index.html">
 <meta property="og:site_name" content="生命不息，编程不止">
-<meta property="og:description" content="code">
+<meta property="og:description" content="Q: 如何根据一个list 生成一个新的listList newList &#x3D; new ArrayList(oldList); Q: 运行时异常，非运行时异常A:运行时异常都是RuntimeException类及其子类异常非运行时异常是RuntimeException以外的异常，类型上都属于Exception类及其子类。 Q:为什么123Integer i &#x3D; 50000;Integer k &#x3D; 5">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-02T08:10:38.000Z">
+<meta property="article:modified_time" content="2022-09-02T08:13:24.558Z">
 <meta property="article:author" content="water">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://water987.github.io/archives/index.html">
+  <link rel="canonical" href="https://water987.github.io/2022/09/02/JavaQuestionInLearning/index.html">
   
     <link rel="alternate" href="/atom.xml" title="生命不息，编程不止" type="application/atom+xml">
   
@@ -284,58 +287,122 @@
   
   
 <main class="main" role="main">
-  	<article class="content article article-archives article-type-list" itemscope="">
-	    <header class="article-header">
-	      <h1 itemprop="title">归档</h1>
-	      <p class="text-muted">共 2 篇文章</p>
-	    </header>
-	    <div class="article-body">
-	      
-  
-  
+  <div class="content">
+  <article id="post-JavaQuestionInLearning" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-    
+    <div class="article-header">
       
+        
+  
+    <h1 class="article-title" itemprop="name">
+      学习过程中的Java问题解答
+    </h1>
+  
+
       
-      <section class="panel panel-default b-no">
-        <div class="panel-heading" role="tab">
-          <h3 class="panel-title">
-            <a data-toggle="collapse" href="#collapse2022" aria-expanded="true">
-              <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
-              2022
-            </a>
-            <!-- <a href="/archives/2022" class="archive-year">2022</a> -->
-          </h3>
-        </div>
-        <div id="collapse2022" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2022">
-        <div class="panel-body">
-          <div class="collection">
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/09/02/JavaQuestionInLearning/" class="article-date">
+	  <time datetime="2022-09-02T08:10:38.000Z" itemprop="datePublished">2022-09-02</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/java/" rel="tag">java</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/09/02/JavaQuestionInLearning/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h4 id="Q-如何根据一个list-生成一个新的list"><a href="#Q-如何根据一个list-生成一个新的list" class="headerlink" title="Q: 如何根据一个list 生成一个新的list"></a>Q: 如何根据一个list 生成一个新的list</h4><p>List<T> newList = new ArrayList<T>(oldList);</T></T></p>
+<h4 id="Q-运行时异常，非运行时异常"><a href="#Q-运行时异常，非运行时异常" class="headerlink" title="Q: 运行时异常，非运行时异常"></a>Q: 运行时异常，非运行时异常</h4><p>A:<br>运行时异常都是RuntimeException类及其子类异常<br>非运行时异常是RuntimeException以外的异常，类型上都属于Exception类及其子类。</p>
+<h4 id="Q-为什么"><a href="#Q-为什么" class="headerlink" title="Q:为什么"></a>Q:为什么</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Integer i = 50000;</span><br><span class="line">Integer k = 50000;</span><br><span class="line">System.out.println((i/1000==k/1000)+&quot;,&quot;+(i==k));</span><br></pre></td></tr></table></figure>
+
+<p>输出结果为  true , false<br>A：Integer 与 int 运算 解包 =》结果为int，Integer==Integer 判断hashcode()</p>
+<h4 id="Q：对象是如何判断相等的，Integer-是如何判断相等的，字符串是如何判断相等的。"><a href="#Q：对象是如何判断相等的，Integer-是如何判断相等的，字符串是如何判断相等的。" class="headerlink" title="Q：对象是如何判断相等的，Integer 是如何判断相等的，字符串是如何判断相等的。"></a>Q：对象是如何判断相等的，Integer 是如何判断相等的，字符串是如何判断相等的。</h4><p>A：<br>1.对象==对象  会判断两个对象的 hashcode()  相等为true 否则 false<br>2.Integer == int   会自动解包，两个int数 对比<br>3.字符串 拥有常量，对象两种形式，没有自动解包，因此  对象==对象 找hashcode()，对象==常量 false,  常量==常量  true ,  常量拼接对象 变对象</p>
+<h4 id="Q-看到算法题时，考虑不全，写到一半发现数据结构不合适，让后重写"><a href="#Q-看到算法题时，考虑不全，写到一半发现数据结构不合适，让后重写" class="headerlink" title="Q:看到算法题时，考虑不全，写到一半发现数据结构不合适，让后重写"></a>Q:看到算法题时，考虑不全，写到一半发现数据结构不合适，让后重写</h4><h4 id="Q-同步-异步-阻塞-非阻塞"><a href="#Q-同步-异步-阻塞-非阻塞" class="headerlink" title="Q: 同步/异步   阻塞/非阻塞"></a>Q: 同步/异步   阻塞/非阻塞</h4><p>同步，异步 是对 被调用者<br>阻塞，非阻塞是对  调用者来说<br>同步阻塞，调用者调用后阻塞，被调用者完成后返回。     例： 大爷烧水，等待水开。<br>同步非阻塞，调用者调用后，轮询结果，被调用者完成后返回。例： 大爷一会看电视，一会过来      看看水有没有开。<br>异步阻塞，少见            例：大爷烧水，等待会响的水壶水开<br>异步非阻塞，调用者调用后，做别的事情，被调用者立即返回结果，等做完后回调。  例：大爷看电视，水烧开，壶会响，然后去处理开水。</p>
+<h4 id="Q-String-为什么不可修改"><a href="#Q-String-为什么不可修改" class="headerlink" title="Q:String 为什么不可修改"></a>Q:String 为什么不可修改</h4>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
     
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://water987.github.io/2022/09/02/JavaQuestionInLearning/" title="学习过程中的Java问题解答" target="_blank" rel="external">https://water987.github.io/2022/09/02/JavaQuestionInLearning/</a>
+    </li>
     
-<a href="/2022/09/02/JavaQuestionInLearning/" class="collection-item"   itemprop="url">
-  <time datetime="2022-09-02T08:10:38.000Z" itemprop="datePublished">2022-09-02</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 学习过程中的Java问题解答
-</a>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/Water987" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/Water987" target="_blank"><span class="text-dark">water</span><small class="ml-1x">java开发者</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
 
 
   
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
     
     
+    <li class="next">
+      <a href="/2022/09/02/SQLQuestionInLearning/" title="学习过程中的SQL问题解答"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
     
-<a href="/2022/09/02/SQLQuestionInLearning/" class="collection-item"   itemprop="url">
-  <time datetime="2022-09-02T03:14:53.000Z" itemprop="datePublished">2022-09-02</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 学习过程中的SQL问题解答
-</a>
-
-
+    
+  </ul>
   
   
-    </div></div></div></section>
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
   
 
-	    </div>
-  	</article>
-  	 	
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -388,6 +455,37 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 
