@@ -306,7 +306,12 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h4 id="Q-mysql-中-having，where-执行顺序"><a href="#Q-mysql-中-having，where-执行顺序" class="headerlink" title="Q: mysql 中 having，where 执行顺序"></a>Q: mysql 中 having，where 执行顺序</h4><p>A: where 在数据分组前进行过滤，having在数据分组后进行过滤。</p>
+        <h4 id="Q-MySQL查询语句的执行顺序"><a href="#Q-MySQL查询语句的执行顺序" class="headerlink" title="Q:MySQL查询语句的执行顺序"></a>Q:MySQL查询语句的执行顺序</h4><p>正确的执行顺序应该是<br>●先找到要查询表格或连接要查询的表格，因此FROM才是第一步；<br>●接下来是进行条件筛选，所以是WHERE紧随其后；<br>●然后如果遇到表格有分组的需要，则需要先GROUP BY；<br>●分组时如果也存在筛选条件，这里就要用HAVING进行分组筛选；<br>●这些执行过后才是查询操作SELECT；<br>●SELECT的时候如果遇到重复数据，就需要去重，即使用DISTINCT;<br>●接下来如果要对查询后的数据进行排序，会用到ORDER BY；<br>●最后如果要指定返回的查询数据范围、条数则要用LIMIT/OFFSET函数</p>
+<h4 id="Q-什么是存储过程"><a href="#Q-什么是存储过程" class="headerlink" title="Q: 什么是存储过程"></a>Q: 什么是存储过程</h4><p>A:存储过程是为了完成特定功能的SQL语句集，经编译创建并保存在数据库中，用户可通过指定存储过程的名字并给定参数(需要时)来调用执行。</p>
+<h4 id="Q-sql语句-行转列"><a href="#Q-sql语句-行转列" class="headerlink" title="Q: sql语句 行转列"></a>Q: sql语句 行转列</h4><p>原本数据是一个人多行数据，每行一个成绩，现在要行转列，因此需要按学号分组，组内将数据拆成列</p>
+<h4 id="Q-mysql联结操作"><a href="#Q-mysql联结操作" class="headerlink" title="Q: mysql联结操作"></a>Q: mysql联结操作</h4><img src="/2022/09/02/SQLQuestionInLearning/1661933550713-7dea1af3-459d-4764-9805-c967c64fb7f4.png" class title="image.png">
+
+<h4 id="Q-mysql-中-having，where-执行顺序"><a href="#Q-mysql-中-having，where-执行顺序" class="headerlink" title="Q: mysql 中 having，where 执行顺序"></a>Q: mysql 中 having，where 执行顺序</h4><p>A: where 在数据分组前进行过滤，having在数据分组后进行过滤。</p>
 <h4 id="Q-if-语句如何使用"><a href="#Q-if-语句如何使用" class="headerlink" title="Q:if 语句如何使用"></a>Q:if 语句如何使用</h4><p>A:if(列=条件，true返回，false返回)</p>
 <h4 id="Mysql常用命令"><a href="#Mysql常用命令" class="headerlink" title="Mysql常用命令"></a>Mysql常用命令</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 连接数据库</span><br><span class="line">mysql -u username -p -h mysql地址 -P 端口</span><br></pre></td></tr></table></figure>
 
